@@ -95,9 +95,9 @@ int main(int arc, char **argv)
 {
     if(arc==1) // no parameters - paste and execute code
     {
-    char commands[MAX_COMANDS];
-    scanf("%s",commands,MAX_COMANDS);
-    interp(commands);
+        char commands[MAX_COMANDS];
+        scanf("%s",commands,MAX_COMANDS);
+        interp(commands);
     }
     if(arc==2) // parameter - file
     {
