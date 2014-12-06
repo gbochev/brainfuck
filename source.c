@@ -93,7 +93,7 @@ void interp(char* commands)
 }
 int main(int arc, char **argv)
 {
-    if(arc<=1) // no parameters - paste and execute code
+    if(arc==1) // no parameters - paste and execute code
     {
     char commands[MAX_COMANDS];
     scanf("%s",commands,MAX_COMANDS);
