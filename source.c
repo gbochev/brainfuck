@@ -11,7 +11,6 @@ char* openFile(char* filename)
     fgets (str, MAX_COMANDS, f);
     fclose(f);
     return str;
-
 }
 void interp(char* commands)
 {
@@ -56,17 +55,17 @@ void interp(char* commands)
             if (memory[counter] == 0)
             {
 
-                int braket = 0;
+                int brackets = 0;
                 int j;
                 for (j = i + 1; j < strlen(commands); j++)
                 {
-                    if (commands[j] == '[') braket++;
-                    if (commands[j] == ']' && braket == 0)
+                    if (commands[j] == '[') brackets++;
+                    if (commands[j] == ']' && brackets == 0)
                     {
                         i = j;
                         break;
                     }
-                    if (commands[j] == ']' && braket != 0) braket--;
+                    if (commands[j] == ']' && brackets != 0) brackets--;
                 }
             }
             break;
@@ -74,17 +73,17 @@ void interp(char* commands)
             if (memory[counter] != 0)
             {
 
-                int braket = 0;
+                int brackets = 0;
                 int j;
                 for (j = i-1; j > 0; j--)
                 {
-                    if (commands[j] == ']') braket++;
-                    if (commands[j] == '[' && braket == 0)
+                    if (commands[j] == ']') brackets++;
+                    if (commands[j] == '[' && brackets == 0)
                     {
                         i = j;
                         break;
                     }
-                    if (commands[j] == '[' && braket != 0) braket--;
+                    if (commands[j] == '[' && brackets != 0) brackets--;
                 }
 
             }
